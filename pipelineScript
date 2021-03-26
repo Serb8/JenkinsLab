@@ -5,6 +5,18 @@ node {
     stage('List Content') {
         sh 'ls' 
     }
+    stage('Do Something In Parallel') {
+        parallel(
+            thread1: {
+                sleep 5
+                sh 'echo \'thread1 executed\''
+            },
+            thread2: {
+                sleep 10
+                sh 'echo \'thread2 executed\''
+            }
+        )
+    }
     stage('Print Readme') {
         sh 'cat README.md' 
     }
