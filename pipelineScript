@@ -1,0 +1,11 @@
+node {
+    stage('Clone Repo') {
+        git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Serb8/JenkinsLab.git'
+    }
+    stage('List Content') {
+        sh 'ls' 
+    }
+    stage('Print Readme') {
+        sh 'cat README.md' 
+    }
+}
