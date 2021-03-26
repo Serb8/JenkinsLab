@@ -1,11 +1,11 @@
 job('generatedJob') {
   parameters {
-    stringParam('Object', 'Undescribed', 'Some description...')
+    stringParam('Param', 'Value1', 'Some description...')
   }
   
 	steps {
 		shell('echo $JOB_NAME $BUILD_NUMBER')
-      	shell('echo $Object')
+      	shell('echo $Param')
 	}
   
   publishers {
